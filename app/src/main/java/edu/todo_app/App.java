@@ -32,13 +32,13 @@ public class App {
             String command = scanner.nextLine();
 
             switch (command) {
-                case "add" -> taskService.addTask();
-                case "list" -> taskService.displayTasks();
-                case "edit" -> taskService.editTask();
-                case "delete" -> taskService.removeTask();
-                case "filter" -> taskService.filterTasksByStatus();
-                case "sort" -> taskService.sortTasks();
-                case "exit" -> {
+                case "1" -> taskService.addTask();
+                case "2" -> taskService.displayTasks();
+                case "3" -> taskService.editTask();
+                case "4" -> taskService.removeTask();
+                case "5" -> taskService.filterTasksByStatus();
+                case "6" -> taskService.sortTasks();
+                case "7" -> {
                     System.out.println("Выход...");
                     return;
                 }
