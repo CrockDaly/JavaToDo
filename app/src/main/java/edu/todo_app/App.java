@@ -29,9 +29,9 @@ public class App {
                     7. Выход
                     """);
             System.out.print(">> ");
-            String choice = scanner.nextLine();
+            String command = scanner.nextLine();
 
-            switch (choice) {
+            switch (command) {
                 case "add" -> taskService.addTask();
                 case "list" -> taskService.displayTasks();
                 case "edit" -> taskService.editTask();
