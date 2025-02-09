@@ -89,7 +89,7 @@ public class TaskServiceTest {
     }
 
     @Test
-    void testEditTaskStatusInProgress() {
+    void testEditTaskStatus_InProgress() {
         Task task = new Task(1, "Название", "Описание", LocalDate.now(), TaskStatus.TODO);
         tasks.add(task);
 
@@ -102,7 +102,7 @@ public class TaskServiceTest {
     }
 
     @Test
-    void testEditTaskStatusCompleted() {
+    void testEditTaskStatus_Completed() {
         Task task = new Task(1, "Название", "Описание", LocalDate.now(), TaskStatus.TODO);
         tasks.add(task);
 
