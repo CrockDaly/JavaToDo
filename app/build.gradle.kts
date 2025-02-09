@@ -8,18 +8,27 @@ repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
 }
-
 dependencies {
-    // Use JUnit Jupiter for testing.
-    testImplementation(libs.junit.jupiter)
+    // JUnit Jupiter для тестирования
+    testImplementation("org.junit.jupiter:junit-jupiter:5.10.0")
 
+    // Mockito Core и интеграция с JUnit 5
+    testImplementation("org.mockito:mockito-core:5.7.0")
+    testImplementation("org.mockito:mockito-junit-jupiter:5.7.0")
+
+    // Платформа для запуска JUnit тестов
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+
+    // Lombok (чтобы не мешал тестированию)
     compileOnly("org.projectlombok:lombok:1.18.30")
     annotationProcessor("org.projectlombok:lombok:1.18.30")
+    testCompileOnly("org.projectlombok:lombok:1.18.30")
+    testAnnotationProcessor("org.projectlombok:lombok:1.18.30")
 
-
+    // Guava
     implementation(libs.guava)
 }
+
 
 // Apply a specific Java toolchain to ease working on different environments.
 java {
@@ -37,3 +46,4 @@ tasks.named<Test>("test") {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
 }
+

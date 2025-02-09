@@ -25,8 +25,6 @@ public class TaskService {
         System.out.println("Введите описание задачи: ");
         String description = scanner.nextLine();
 
-        System.out.println("Введите срок выполнения задачи в формате дд.мм.гг ");
-
         LocalDate dueDate = null;
         while (dueDate == null) {
             System.out.println("Введите срок выполнения задачи в формате дд.мм.гг ");
@@ -40,7 +38,7 @@ public class TaskService {
             }
         }
 
-        tasks.add(new Task(nextId++, title, description, dueDate, TaskStatus.DONE));
+        tasks.add(new Task(nextId++, title, description, dueDate, TaskStatus.TODO));
     }
 
     public void displayTasks() {
