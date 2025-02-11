@@ -1,4 +1,4 @@
-package edu.todo_app;
+package edu.todoapp;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -27,6 +27,11 @@ public class Task {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yy");
         String formattedDueDate = dueDate.format(formatter);
 
-        return id + ". Название: " + title + " Описание: " + description + " Статус: " + status.getStatus() + " Выполнить до: " + formattedDueDate;
+        return id +
+                ". Название: " + title +
+                " Описание: " + description +
+                " Статус: " + status.getStatus() +
+                " Выполнить до: " + formattedDueDate;
+
     }
 }

@@ -1,4 +1,4 @@
-package edu.todo_app;
+package edu.todoapp;
 
 public enum TaskStatus {
     IN_PROCESS("В процессе"),
