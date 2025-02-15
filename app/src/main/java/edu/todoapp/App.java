@@ -1,12 +1,8 @@
 package edu.todoapp;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class App {
-    private final List<Task> tasks = new ArrayList<>();
-    private int nextId = 1;
     private final Scanner scanner = new Scanner(System.in);
     private final TaskService taskService = new TaskService(scanner);
 
@@ -33,7 +29,7 @@ public class App {
 
             switch (command) {
                 case "1" -> taskService.addTask();
-                case "2" -> taskService.displayTasks(tasks);
+                case "2" -> taskService.displayTasks(taskService.getTasks());
                 case "3" -> taskService.editTask();
                 case "4" -> taskService.removeTask();
                 case "5" -> taskService.filterTasksByStatus();

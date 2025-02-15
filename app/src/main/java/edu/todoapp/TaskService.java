@@ -14,6 +14,10 @@ public class TaskService {
     private final Scanner scanner;
     private int nextId = 1;
 
+    private static final String OPTION_IN_PROCESS = "1";
+    private static final String OPTION_DONE = "2";
+    private static final String OPTION_EXIT = "3";
+
     public TaskService( Scanner scanner) {
         this.tasks = new ArrayList<>();
         this.scanner = scanner;
@@ -128,16 +132,16 @@ public class TaskService {
         System.out.print(">> ");
         String statusChoice = scanner.nextLine();
 
-        if ("3".equals(statusChoice)) {
+        if (OPTION_EXIT.equals(statusChoice)) {
             return;
         }
 
-        if (!statusChoice.equals("1") && !statusChoice.equals("2")) {
+        if (!statusChoice.equals(OPTION_IN_PROCESS) && !statusChoice.equals(OPTION_DONE)) {
             System.out.println("Неверный ввод, попробуйте снова");
             return;
         }
 
-        TaskStatus newStatus = statusChoice.equals("1") ? TaskStatus.IN_PROCESS : TaskStatus.DONE;
+        TaskStatus newStatus = statusChoice.equals(OPTION_IN_PROCESS) ? TaskStatus.IN_PROCESS : TaskStatus.DONE;
         task.setStatus(newStatus);
         System.out.println("Статус изменён!");
     }
