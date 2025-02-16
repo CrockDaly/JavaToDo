@@ -46,14 +46,19 @@ public class TaskService {
         tasks.add(new Task(nextId++, title, description, dueDate, TaskStatus.TODO));
     }
 
+    public void displayTasks() {
+        displayTasks(getTasks());
+    }
+
     public void displayTasks(List<Task> tasksToDisplay) {
         if (tasksToDisplay.isEmpty()) {
             System.out.println("Список задач пуст");
             return;
         } else {
-           tasksToDisplay.forEach(System.out::println);
+            tasksToDisplay.forEach(System.out::println);
         }
     }
+
 
     public void editTask() {
         if (tasks.isEmpty()) {
@@ -62,7 +67,7 @@ public class TaskService {
         }
 
         System.out.println("Выберите задачу, которую вы хотите изменить: ");
-        displayTasks(tasks);
+        displayTasks();
         String id = scanner.nextLine();
         Optional<Task> optionalTask = getTask(id);
 
@@ -155,7 +160,7 @@ public class TaskService {
         }
 
         System.out.println("Выберите задачу, которую вы хотите удалить: ");
-        displayTasks(tasks);
+        displayTasks();
         String id = scanner.nextLine();
        Optional<Task> task = getTask(id);
         if (task.isPresent()) {
@@ -186,6 +191,7 @@ public class TaskService {
         }
     }
 
+
     public void sortTasks() {
         if (tasks.isEmpty()) {
             System.out.println("Ошибка сортировки: cписок задач пуст");
@@ -213,7 +219,7 @@ public class TaskService {
             default -> System.out.println("Неверный ввод, попробуйте снова");
 
         }
-        displayTasks(tasks);
+        displayTasks();
     }
 
     public Optional<Task> getTask(String id) {

@@ -29,7 +29,7 @@ public class App {
 
             switch (command) {
                 case "1" -> taskService.addTask();
-                case "2" -> taskService.displayTasks(taskService.getTasks());
+                case "2" -> taskService.displayTasks();
                 case "3" -> taskService.editTask();
                 case "4" -> taskService.removeTask();
                 case "5" -> taskService.filterTasksByStatus();
